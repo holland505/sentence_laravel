@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="row">
+<!--
     <div class="col-12">
         <div class="card bg-gray">
             <h5 class="card-header bg-green font-weight-normal">Question</h5>
@@ -34,7 +35,26 @@
             </div>
         </div>
     </div>
+-->
+
+    @foreach($items as $item)
+    <div class="col-12">
+        <div class="card bg-gray">
+            <h5 class="card-header bg-green font-weight-normal">Question</h5>
+            <div class="card-body" id="sentence">
+                <p class="card-title h3">{{$item->sentence}}</p>
+                <div class="separator"></div>
+                <p class="card-text mt-2 h5">{{$item->translation}}</p>
+            </div>
+            <div class="card-body" id="choice">
+                <a href="#" class="btn btn-choice btn-sm">{{$item->word}}</a>
+            </div>
+        </div>
+    </div>
+    @endforeach
 </div>
+
+<!--
 <div class="row">
     <table class="table table-dark">
         <thead>
@@ -72,3 +92,4 @@
     </table>
 </div>
 @endsection
+-->
